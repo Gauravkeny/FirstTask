@@ -1,0 +1,731 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,2417" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/credentials" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>CredentialManagement</x:String>
+      <x:String>UiPath.Credentials.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>CredentialManagement</AssemblyReference>
+      <AssemblyReference>UiPath.Credentials.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence - Arcadia" sap:VirtualizedContainerService.HintSize="825,2352" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strChallengeBrowserURL" />
+      <Variable x:TypeArguments="x:String" Name="strArcadiaAppURL" />
+      <Variable x:TypeArguments="x:String" Name="strMycredentials" />
+      <Variable x:TypeArguments="ss:SecureString" Name="sestrArcadiaPass" />
+      <Variable x:TypeArguments="x:String" Name="strArcadiaUser" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="783,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strChallengeBrowserURL]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">https://developer.automationanywhere.com/challenges/automationanywherelabs-quarterclose.html</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strArcadiaAppURL]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">https://developer.automationanywhere.com/challenges/automationanywherelabs-arcadiabanklogin.html</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strMycredentials]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">Arcadia</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <p:GetSecureCredential CredentialType="Generic" DisplayName="Get Arcadia Secure Credentials" sap:VirtualizedContainerService.HintSize="783,79" sap2010:WorkflowViewState.IdRef="GetSecureCredential_1" Password="[sestrArcadiaPass]" PersistanceType="Enterprise" Target="[strMycredentials]" Username="[strArcadiaUser]" />
+    <Sequence DisplayName="Sequence - Opening Apps" sap:VirtualizedContainerService.HintSize="783,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:RetryScope DisplayName="Retry Scope - Opening Challenge browser Activity" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+        <ui:RetryScope.ActivityBody>
+          <ActivityAction>
+            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Automation Anywhere Labs - Quarter Close Challenge" sap:VirtualizedContainerService.HintSize="434,231" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d8a41dc4-017b-405e-a5dd-bd197afb8f22" Version="V2" WindowResize="Maximize">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Edge" IconBase64="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" InformativeScreenshot="3f6dbd4c689ebda1b9eb800b6ff37acf.png" Selector="&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;" Url="[strChallengeBrowserURL]" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </ActivityAction>
+        </ui:RetryScope.ActivityBody>
+        <ui:RetryScope.Condition>
+          <ActivityFunc x:TypeArguments="x:Boolean">
+            <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'IMG - Automation Anywhere'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0afd1cd0-d84b-4847-a6aa-cd0abdcc9c52" InformativeScreenshot="2a40e301fd9012b8581ab9c2d472ca01" Selector="&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&lt;webctrl tag='IMG' parentclass='container-fluid' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+          </ActivityFunc>
+        </ui:RetryScope.Condition>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:RetryScope>
+      <ui:LogMessage DisplayName="Log Message - Opened Challenge Browser" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Challenge Browser Opened Sucessfully&quot;]" />
+      <ui:RetryScope DisplayName="Retry Scope - Opening The Site to Inpu Data" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="2">
+        <ui:RetryScope.ActivityBody>
+          <ActivityAction>
+            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Arcadia Financial - Login" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="279c5312-5282-4326-90c0-b22231de25d9" Version="V2" WindowResize="Maximize">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Entering Email ID and Password" sap:VirtualizedContainerService.HintSize="376,787" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="279c5312-5282-4326-90c0-b22231de25d9" Text="[strArcadiaUser]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-arcadiabanklogin.html" DesignTimeRectangle="473, 385, 419, 58" ElementType="InputBox" FriendlyName="'INPUT inputEmail'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' class='form-control' aaname='Email address' /&gt;" Guid="4c64d3be-240c-4959-bdff-8f5b5e9d8c3e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAacAAAA+CAYAAACP8dSnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPSSURBVHhe7drBbtNIHMDhfRUOe+CxKg48SQ/tmyDlUdothxWHRRw4IKRWSFxAXCLjscfOeOw0tJu6/0bfJ42Kk8nYzWF+sstfDQAEI04AhDOJ04+fv5pPn7807z98bP759z/DMAzDeNKRepO6k/pTGuOU3kiT7r59b7bbbX4VAJ5O6k3qTupPGagxTqlcaQIArC31J3VoMMYpVcsdEwDPIfUndWgwxik9+wOA51J2SJwACEGcAAhHnAAIR5wACEecAAhHnAAIR5wACEecAAhHnAAIR5wACEecAAhHnAAIR5wACEecAAhHnAAIR5wACEecAAhHnAAI5yTidH3xunn1ZtPclscXN/noWO6ad29eN2ebu3y8x9Vl8+rvy+Y6HwLwcEeN0+3mbbsxt2GYjLfNu695whMRJ4DTcvw4FZF4LuIE8LKJ0x8TJ4C1rBqnIRrdz/zYr9/s+41/+lrppjnP7/VjuvnXMfqTOJXXkMb5VX5j8HXTnBXvn21uFuM0Xae9rjpOw3H3s51TP34cP1s9/qzOP/leh7WGcfQQAzyv9ePUbqZjCIpNdvradKO+3VxOjrt16k3+IXFqN/7zMjL1OXMYymAN117Gqb6OXVDqOM2vZ3aNk2voY7w7fxvvi3ye7hzl99POFSfgxBw/Tt3mXIx7IjLeMS28du/js24j3wWgXnd+nkOmMVj+fHVds0hk1bXNwpd0ny3mdIr1962d1OsDnKD175wOhmg5TvPw/c84jXc5u9HHqT9/edfUq64rRWLpd12MUxWT7rXpuYcxrN/9Dum1PZEs5wKcmhcQp/z3pnLdasN/aJz6jb96NNaeY9U43fM97exCNP998vciUsAJih+nfZv7o+M0fYTXm8dpXwym1zV/9Nbf4R2I032P7ZYsrZEd+s4BXqL4cZpt5MMdw2PjND9nN78MVheDacCGObvP5YiVv+/4qPBAnJY+27q+yPPadeb/YSO/1/67vC5xAk7R8ePUbc7TMWzoj4pTa7puu0lXG/7D4tSq/t50frVwN5UDtZuz/1rHeSkSdYzq41H12XaMa1fXN1+veE+YgBN01DgBwDGIEwDhiBMA4YgTAOGIEwDhiBMA4YgTAOGIEwDhiBMA4YgTAOGIEwDhiBMA4YgTAOGIEwDhiBMA4YgTAOGIEwDhiBMA4YgTAOEsxun9h4/NdrvNRwCwntSf1KHBGKdPn780d9++5yMAWE/qT+rQYIzTj5+/umqlCe6gAFhD6k3qTupP6tBgjFOS3kjlSpPSsz/DMAzDeMqRepO6U4YpmcQJACIQJwCCaZrfRjrGSKZPCesAAAAASUVORK5CYII=" InformativeScreenshot="3a9689169568d5fc8472d6df7be71ce7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Arcadia Financial - Login' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="473, 385, 123, 58" ElementType="Text" FriendlyName="'Email address'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Email address' check:innerText='Email address' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH8AAAA+CAYAAAACucTaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALuSURBVHhe7Z29btswFEb7Khk65LGMDHkSD/abBNCj2HWHokOLDh2KADYKdGmRxWBJiqQuLykptlVXzvcdgHAkUeTlPfzJpneGwEL5wGTyf/95Md++/zAfP381Hz59YXnjJcl34p30w89f5ng8hrvkLZPkuxXvxBMckny36rnisUjy3RlAsKB8YCgfGMoHhvKBoXxgKB8YygeG8oGhfGAoHxjKB4bygaF8YCgfGMoHhvKBoXxgKB+Ym5W/Xd2bu4fG7OX1aheupuJgnh7uzaI5hOseNmtz935ttuHyVrhY/r55tAO3ic/Ko3l6DhX+EZR/OdPIFxL+F5R/OpQ/COUPMiY/SvG/4Vhok9kmNr8n2ZlleNaWPLla9mvkyxhcWW7Cg8hzYxbi+aLZVeXn7di4tPx47X9tHX08pXfV8aj6z/Ia24plgol+Hfk22JRoMYj8Xp6IfbPOrn07OomnyLeJXUqJus+QeDkhYuxSvo6jE6bll/EUMWYxtJO9698ujlXox/ch82Przka+H7woA5LSiq/cG9xefaK6BOt2y37GyJNdf1/FVUgIqNiKieXw74o6HtF+X9sO3f5EXG3b76iJrssvJ9aF8tMq7Uorv+1frvoWFZeTUBtrVb6S5e/lfccS2/djcPd6JqGsOwUzlR/Oe9muSuip8tvEqq3T9nFV+QN56uhEl+MJeZloEsxTfl/yzpafb/Etpfy+ZOdxlVtzu0ONyB/a1mvU2giM5fy1zFN+kag448+VX/bp68sJ4ZOdT5BYp3svTBI53nSUjMivvWvZrkI92075D2l4Zv+Wcc1Lvh98XmLCzpJvydu1SVAJPU2+RZ33y01lNwgToKvTH2uq5yRo2fo6od61JbWt4ivbE88mEO+4WD65XSgfGMoHhvKBoXxgKB8YygeG8oGhfGAoHxjKB4bygaF8YCgfGMoHhvKBoXxgKB8YygcmyednVvBI8vmBJTySfH5aDY8k38GPKmKVTD7BgvJhMeYv/ChXft7/QNEAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,241" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="279c5312-5282-4326-90c0-b22231de25d9" SecureText="[sestrArcadiaPass]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-arcadiabanklogin.html" DesignTimeRectangle="473, 459, 419, 58" ElementType="InputBoxPassword" FriendlyName="'INPUT inputPassword'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' aaname='Password' /&gt;" Guid="e582fef2-72f0-433f-878b-1fdc18694b2c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAacAAAA+CAYAAACP8dSnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN8SURBVHhe7dmxatxIGMDxe5UULvJYJkWexIX9JoF9FPuc4khxIUWKELAJpElIs0z2kzTSSKs9OE67+cj9fjDYOyNp5UZ/Rv6jAEAy4gRAOrM4ffv+o3z4+Km8ffe+/PnX34ZhGIZx1hG9ie5Ef1pjnGIhDnr+8rXs9/thFgDOJ3oT3Yn+tIEa4xTligMA4NKiP9GhaoxTVMuOCYBfIfoTHarGOMW7PwD4VdoOiRMAKYgTAOmIEwDpiBMA6YgTAOmIEwDpiBMA6YgTAOmIEwDpiBMA6YgTAOmIEwDpiBMA6YgTAOmIEwDpiBMA6YgTAOmIEwDpiNMW7u/Ki6u78jB8BOC/2TROT7vXh4f0y/l4tStPw/pvS5wANrV9nGYxei5vXv0PAiVOAJs6c5wOPu/K9dXr8ubz8Pl3JE4Amzp/nMpjubl6WW7u+0/LV3/Xu+d+YfBwO63FqOeNu7BxbQjeShj675jPxXXb71rex4vbx2Gl193HYa7eT3vu/B4P3yNOAJu68M7pEKo2At3aIlzt+YeHfl2rsaiednfTNZtrtBGb5ubH9HFpY3L8+rEGaLpGr5tv73H4G8QJYDtnjlMfheWuZNJHoe5KlgGazI9bivPGtS4Wh6itzHXxmMWysZg/ilA4da6dE8Cmto9Tt4uYxnFQhmCtHdM9/GPuVABi7TgCsyjGcRG4+DnMdes1es38XB/AUzu1zqlzu3sTJ4CtnHnnNFfjtXwFdxSw7mG/HqkpgE0Mmh1NRKW/fkQw5ubRESeA/C4Yp7UQnYhT55/W1v/PdHMf81Mk+lDN5/7Va721OJ0MpjgBbOWiO6flA7/ugmqAHm7bB3wbp8Pvt+11l3FqdlQr11/eU3cfs5j039Weuxqnelx7vfFVpDgBbOWicVr+v+l69zjbHfXRaNfrrmmIQrPWhqkzRGI2P8yt7b5Of1dvPU5hcS/x93qtB7CpTeMEAFsQJwDSEScA0hEnANIRJwDSEScA0hEnANIRJwDSEScA0hEnANIRJwDSEScA0hEnANIRJwDSEScA0hEnANIRJwDSEScA0hEnANJZjdPbd+/Lfr8fPgHA5UR/okPVGKcPHz+V5y9fh08AcDnRn+hQNcbp2/cfXbXiADsoAC4hehPdif5Eh6oxTiEWolxxULz7MwzDMIxzjuhNdKcNU5jFCQAyECcAkinlJxxAm/OSSJX0AAAAAElFTkSuQmCC" InformativeScreenshot="c8a636c4558e9e375744a7a3cc7e461e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Arcadia Financial - Login' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="473, 459, 92, 58" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='' check:innerText='Password' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAA+CAYAAADUHB6/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKJSURBVHhe7Zw9bhsxEEZzFRcucizBhU+iQrqJgT2KFLkwUiRIkcIwICFAmgRpBIbD3xku10BsZL+V/T2AsDVccjnzSJb7wREoFADGCPj1+4/79v3R3X/+6j49fGGboRUBUnwp/OnHT3c+n1OU/G+KANn5UnwyL0WA7H7u/PkpAuQ+IvNDAWAoAAwFgKEAMBQAhgLAUAAYCgBDAWAoAAwFgKEAMBQAhgLAUAAYCgBDAWAoAAwFvJTd1l1db90+/XwprxZwHG79Qj7adjO4Y+p/syxKgCn4yd3dvAMJyxXgeRrc6vrW3T2l32+RRQtwB7f2V9F6F3+119RqOMWOxH5T+6TlceU0lb4ktZN8fIeNybz6Xe06rjaH1BMJ6/CxvB491q7Rv+dyToCXoRMNfY0cPd4nlvtyQTLHYVvnVHNoUTVmn4kF1AUbX5W5yHWOSIjrNaYcFiogJt7urkpMPO+utsgV+1yLjCt9oSBeXCcWCmQ2hKKJjwotTI1d1AkIu6G2cdGSlN4zIUGJTSUpfeNEjXh5TiTK3xQL/Vmsilui5KkTF5gaG9a2yBNgyYLa62IkKSTUF1Elq4TVzpTCxflFtMRsYd+xgF6xJwQEnuvr3/vrncRrIaIMG/unK6gnYHJTXMAJaJPKuzkXeb/RSWgB/v+NnrcVoE5GZ/52TWEdpmDxXXpsV0B+Ts9Xrs0LENDe/6vhYHZ5LIzuz7s/Ja76dPEDqRAmnmK9UzT9rkhfgNCsRfJdyhVEXgcFgKEAMBQAhgLAUAAYCgBDAWAoAAwFgKEAMBQAhgLAUAAYCgBDAWAoAAwFgKEAMEUAP1mGoQjgR/swFAH8bCWGIkDgh1vnb0YAmR8KgOLcX3TAYK0yD5VuAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="279c5312-5282-4326-90c0-b22231de25d9" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-arcadiabanklogin.html" DesignTimeRectangle="827, 587, 65, 38" ElementType="Text" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl aaname='Login' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Login' tag='A' type='' class='btn btn-dark' check:innerText='Login' /&gt;" Guid="a34748c1-4824-42be-8deb-ca5b576b72b9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEUAAAAqCAYAAADlL5amAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG2SURBVGhD7ZpNjoJAEIXnKrNw4WLuM8kkcxtdeBMSzqHux53hEHiBGqrhNQ8oHEZFUepLXqL0D9Rn03HRb+J0cCkGDSk/h4N8fn3LYvkh74vly0fr1Hq1biZK0Ya5yGhH62YxUYoaswbMJVo/iFLmukoQrR9EKVbHuQW4FApwKRTgUijApVCAS6EAl0IBLoUCXAoFPI2UJCseMt/Lymi7VcDVUsLDZqnZdsu4lAcFuBQKuIOUVI7lLSpOsl13+4V5IpkkaZhYEm6n++D7anfSARV1/0sCxpWy3kteNOe7TX0tFCtyTOt+YQ7eL6pxf0opqOfeyFYHnf2BzgeMKqWvrXE9CDBWz5CV0t54W2P+GzCilPKX4xURow+Pgvhzu8+A1yf217gU477Tl9Lf1rgeCum+PuUG+oJS+jdallBtkLxahm60k5bSgYqOBQLroSsxQAW1CnwqKaPlygIvCZisFHMljBwwASn66jRXRLnJ2v98xwyYxErp7kv3F6IB091THhDgUijApVCAS6EAl0IBUYofxTCOYvihHePQjh/vMo53KdqgxuYiR+vUelmI0pDilLiUDiK/DlUHJ/RTjK4AAAAASUVORK5CYII=" InformativeScreenshot="d8d6eb7a07a477a442d3c4cb1d69ada0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Arcadia Financial - Login' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAESSURBVDhPzdGxSkJxFMfxq6BODkIugYuDi5BLzQ2+QaOP4AP0GLkYTSJRBFFNoQ3lFAb1AC3OQi8QBEH1/V6OBHkDCQL/8IE/5/zO8d5r8i9n4+C4iC3sB+/FaGcfAjlsooMLvOAjeLdmz0wuxtLBEnbRwzPe8fkLe2bMOlNyQQP38JeyhrKYdabhgjxa6OMcVxhiAB9b3q3ZM2PWmXy8SPoqBRziEU1UcB28W7NnphBj34eiX/4Gr9hBFbPg3Zo9M8v/iMVorseCbfxcYC17AYUy2njCG7rYwzx4t2bPjNlyjKcL/MKXuMUEY4xwF7xbs2fGbHMxXMMZHjBdkVlnai6o4winOFmRWWfq6VP8/STJF/fpUrTlJmQmAAAAAElFTkSuQmCC" InformativeScreenshot="d4942e19d1282ec85878645b72880d67.png" Selector="&lt;html app='msedge.exe' title='Arcadia Financial - Login' /&gt;" Url="[strArcadiaAppURL]" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </ActivityAction>
+        </ui:RetryScope.ActivityBody>
+        <ui:RetryScope.Condition>
+          <ActivityFunc x:TypeArguments="x:Boolean">
+            <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Arcadia Financial'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="449f0123-f170-4a98-91fb-c778889335e2" InformativeScreenshot="cc979c49aa6b8f8335cec80e325f2caf" Selector="&lt;html app='msedge.exe' title='Arcadia Financial - Account Overview' /&gt;&lt;webctrl tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+          </ActivityFunc>
+        </ui:RetryScope.Condition>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:RetryScope>
+      <ui:LogMessage DisplayName="Log Message - Opened Arcadia App" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Arcadia Financial App Opened Sucessfully.&quot;]" />
+    </Sequence>
+    <Sequence DisplayName="Sequence - Running Method" sap:VirtualizedContainerService.HintSize="783,1944" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="intCounter" />
+        <Variable x:TypeArguments="x:Boolean" Name="BoolTransactionForm" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Assign - Counter Variable" sap:VirtualizedContainerService.HintSize="741,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">1</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:UiElementExists DisplayName="Element Exists 'FORM'" Exists="[BoolTransactionForm]" sap:VirtualizedContainerService.HintSize="741,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+        <ui:UiElementExists.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dfba5d0f-c5bb-47f9-880e-05ae5755e998" InformativeScreenshot="d4572d6f4bf96f61d597d1b484163afd" Selector="[&quot;&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&lt;webctrl parentid='transaction&quot;+intCounter.ToString+&quot;' tag='FORM' /&gt;&quot;]" TimeoutMS="5000">
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:UiElementExists.Target>
+      </ui:UiElementExists>
+      <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While - Transaxction Form Exists" sap:VirtualizedContainerService.HintSize="741,1460" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+        <ui:InterruptibleWhile.Body>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="705,1295" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strSupplierName" />
+              <Variable x:TypeArguments="x:String" Name="TempPaymentAccount" />
+              <Variable x:TypeArguments="x:String" Name="strPaymentAccount" />
+              <Variable x:TypeArguments="x:String" Name="strTransactionExists" />
+              <Variable x:TypeArguments="x:String" Name="strTransactionStatus" />
+              <Variable x:TypeArguments="x:String" Name="strPaymentDueDate" />
+              <Variable x:TypeArguments="x:String" Name="strPaymentType" />
+              <Variable x:TypeArguments="x:String" Name="strPaymentAmount" />
+              <Variable x:TypeArguments="x:String" Name="strArcadiaDate" />
+              <Variable x:TypeArguments="x:String" Name="strArcadiaAccount" />
+              <Variable x:TypeArguments="x:String" Name="strArcadiaType" />
+              <Variable x:TypeArguments="x:String" Name="strArcadiaAmount" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Sequence - All Transaction Get Text Activity" sap:VirtualizedContainerService.HintSize="663,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Payment Due Date" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d47de6e9-a8f8-474d-8c6a-55d02b6c466f" InformativeScreenshot="da04af8b11ade0cb8cccc23d8516676c" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&lt;webctrl id='PaymentDate{0}' tag='INPUT' /&gt;&quot;, intCounter)]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[strPaymentDueDate]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Payment Type" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aff388fc-b449-4338-9a14-04739bd15060" InformativeScreenshot="b1c503e69b1e34375006524a76417ed7" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&lt;webctrl id='PaymentType{0}' tag='INPUT' /&gt;&quot;, intCounter)]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[strPaymentType]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Payment Amount" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3230714-d312-4854-ba05-eb5823b75633" InformativeScreenshot="0e563a12ec1c8d693862fdd931bd08e9" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&lt;webctrl id='PaymentAmount{0}' tag='INPUT' /&gt;&quot;, intCounter)]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[strPaymentAmount]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Supplier Name" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="161fd944-067e-4318-aefc-ac5828159592" InformativeScreenshot="012547dc1407d615becded7a94234421" Selector="[&quot;&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&quot;+&#xD;&#xA;&quot;&lt;webctrl id='Supplier&quot;+intCounter.ToString+&quot;' tag='INPUT' /&gt;&quot;]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[strSupplierName]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Payment Account" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="87ce2026-f293-42f1-83dd-6eca1d650bf7" InformativeScreenshot="84f0c24f9ee9a21165ff5e7899f87862" Selector="[&quot;&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&quot;+&#xD;&#xA;&quot;&lt;webctrl id='PaymentAccount&quot;+intCounter.ToString+&quot;' tag='INPUT' /&gt;&quot;]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[TempPaymentAccount]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+              <Assign DisplayName="Assign - strPaymentAccount" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strPaymentAccount]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Right(TempPaymentAccount,5).replace(")","").Trim]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message - Get The Value" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[string.Format(&quot;The Transaction Data for Transaction Value for transaction {6} is {0},{1},{2},{3},{4}&quot;,strPaymentDueDate,strPaymentType,strPaymentAmount,strSupplierName,strPaymentAccount,intCounter)]" />
+              <If Condition="[intCounter = 1]" DisplayName="If - Counter is equal to 1" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Either 1 of Them" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bed58ac2-0050-4982-bee3-492ad108e02f" InformativeScreenshot="356a09ae18810578a4cf250d0fa922d4" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Arcadia Financial - Account Overview' /&gt;&lt;webctrl href='automationanywherelabs-arcadiabank_acct{0}.html' parentid='sidenavAccordion' tag='A' /&gt;&quot;, strPaymentAccount)]">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <Sequence DisplayName="Sequence - Between Activities" sap:VirtualizedContainerService.HintSize="663,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Selection Credit" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6fa58095-aac3-4ea1-be00-b0995caa3147" InformativeScreenshot="299eb6b51f9d5a5afc90581a6609c69c" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Arcadia Financial - Acct *' /&gt;&lt;webctrl href='automationanywherelabs-arcadiabank_acct{0}.html' parentid='sidenavAccordion' tag='A' /&gt;&quot;, strPaymentAccount)]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into - Search Bar Supplier Name" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[strSupplierName]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f6caf091-28f2-4e3d-abb1-55493df45c0c" InformativeScreenshot="2ca649bdb73b9c4c998b07e659e5c151" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Arcadia Financial - Acct {0}' /&gt;&lt;webctrl parentid='layoutSidenav_content' tag='INPUT' /&gt;&quot;, strPaymentAccount)]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Whether that Part Exists or Not" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b7f904fe-53ce-45cc-b9a9-f8c62d677722" InformativeScreenshot="58242bb1bc700ee0256c85abffce9605" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Arcadia Financial - Acct {0}' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;&quot;, strPaymentAccount)]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[strTransactionExists]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+            </Sequence>
+            <If Condition="[strTransactionExists.Trim.Equals(&quot;No results match your search query&quot;)]" DisplayName="If - Transaction Item Is Nothing" sap:VirtualizedContainerService.HintSize="663,440" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Sequence - Assign Value As Unverified" sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign - Transaction Status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strTransactionStatus]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Unverified</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message - Transaction Unverified" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;The current Transaction is Unverified&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Sequence - Assign Value As Verified" sap:VirtualizedContainerService.HintSize="242,249" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Sequence - All Get Text Arcadia " sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - ArcadiaDate" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_7">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a2868e2a-feab-483b-a4f4-c703f2f3366f" InformativeScreenshot="f4bd1c36e8995babe1de60c0c3150bc2" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Arcadia Financial - Acct {0}' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;&quot;, strPaymentAccount)]">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[strArcadiaDate]</OutArgument>
+                      </ui:GetValue.Value>
+                    </ui:GetValue>
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Arcadia Account" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4cfe4485-4ea0-40b9-8a0c-469748e1be0c" InformativeScreenshot="eb7d75fd2a39a15cdb52cf55e3f20eb4" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Arcadia Financial - Acct {0}' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='TD' /&gt;&quot;, strPaymentAccount)]">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[strArcadiaAccount]</OutArgument>
+                      </ui:GetValue.Value>
+                    </ui:GetValue>
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Arcadia Type" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_9">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b6cc40a-1f82-4cb7-af6f-b06bec8be54e" InformativeScreenshot="037fd2ee47cd34baf33ddf3b2e2dd1ae" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Arcadia Financial - Acct {0}' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='3' tableRow='2' tag='TD' /&gt;&quot;, strPaymentAccount)]">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[strArcadiaType]</OutArgument>
+                      </ui:GetValue.Value>
+                    </ui:GetValue>
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Arcadia Amount" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_10">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b9627767-f942-4390-a1b5-6b7207dd4492" InformativeScreenshot="7154efdc5cef4939ebbbf50cff3e92a5" Selector="&lt;html app='msedge.exe' title='Arcadia Financial - Acct 3842' /&gt;&#xD;&#xA;&lt;webctrl tag='TABLE' /&gt;&#xD;&#xA;&lt;webctrl tableCol='6' tableRow='2' tag='TD' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[strArcadiaAmount]</OutArgument>
+                      </ui:GetValue.Value>
+                    </ui:GetValue>
+                  </Sequence>
+                  <If Condition="[strPaymentDueDate.Trim.Equals(strArcadiaDate.Trim) And strPaymentType.Trim.Equals(strArcadiaType.Trim) And strPaymentAmount.Trim.Equals(strArcadiaAmount.Trim) And strPaymentAccount.Trim.Equals(strArcadiaAmount.Trim)]" DisplayName="If - All Text Matches" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Sequence - Yes Verified" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assign - Transaction Status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[strTransactionStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Verified</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message - Transaction Verified" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;The Current Transaction is Verified&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Sequence - Not Verified" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assign - Transaction Status" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[strTransactionStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Unverified</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message - Transaction Unverified" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;The current Transaction is Unverified&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item - Status for current Transaction" sap:VirtualizedContainerService.HintSize="663,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[strTransactionStatus]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>Status</x:String>
+                  <x:String>Unverified</x:String>
+                  <x:String>Verified</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76e0ce33-7ac4-4914-95a5-8496d144639c" InformativeScreenshot="80920d719d36a91b5e5348e39eb8a033" Selector="[&quot;&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&lt;webctrl id='Status&quot;+intCounter.ToString+&quot;' tag='SELECT' /&gt;&quot;]">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:LogMessage DisplayName="Log Message - Process Completed" sap:VirtualizedContainerService.HintSize="663,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Process Completed for Transaction &quot; + intCounter.ToString]" />
+            <Assign DisplayName="Assign - Increment Counter by 1" sap:VirtualizedContainerService.HintSize="663,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[intCounter+1]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:UiElementExists DisplayName="Element Exists 'FORM'" Exists="[BoolTransactionForm]" sap:VirtualizedContainerService.HintSize="663,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dfba5d0f-c5bb-47f9-880e-05ae5755e998" InformativeScreenshot="d4572d6f4bf96f61d597d1b484163afd" Selector="[&quot;&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&lt;webctrl parentid='transaction&quot;+intCounter.ToString+&quot;' tag='FORM' /&gt;&quot;]" TimeoutMS="5000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+          </Sequence>
+        </ui:InterruptibleWhile.Body>
+        <ui:InterruptibleWhile.Condition>
+          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="BoolTransactionForm" />
+        </ui:InterruptibleWhile.Condition>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InterruptibleWhile>
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Submit Button" sap:VirtualizedContainerService.HintSize="741,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="541ed352-e790-4ad1-b416-317b981f5c49" InformativeScreenshot="391840df2ef58925c929fc4efebb0220" Selector="&lt;html app='msedge.exe' title='Automation Anywhere Labs - Quarter Close Challenge' /&gt;&lt;webctrl tag='BUTTON' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:Click.Target>
+      </ui:Click>
+    </Sequence>
+  </Sequence>
+</Activity>
